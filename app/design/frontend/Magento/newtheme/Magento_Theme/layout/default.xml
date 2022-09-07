@@ -1,0 +1,55 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- FOOTER -->
+
+        <!-- REMOVE UNNECESSARY BLOCKS -->
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+
+        <!-- ADD CUSTOM CONTAINER FOR NEWSLETTER BLOCK -->
+        <referenceContainer name="page.wrapper">
+                <container name="newsletter.container" as="newsletterContainer" label="Newsletter Continer" htmlTag="div" htmlClass="newsletter-container" before="footer" />
+        </referenceContainer>
+
+        <!-- MOVE NEWSLETTER BLOCK TO CUSTOM CONTAINER -->
+        <move element="form.subscribe" destination="newsletter.container" after="-" />
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="custom-footer" after="form.subscribe">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">custom-footer</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <!-- HEADER -->
+
+        <!-- REMOVE UNNECESSARY BLOCKS -->
+        <referenceContainer name="header.panel.wrapper" remove="true" />
+        <referenceContainer name="compare-link-wrapper" remove="true" />
+
+        <!-- MOVE BLOCK TO HEADER -->
+        <move element="navigation.sections" destination="header-wrapper" after="logo" />
+
+        <!-- ADD CUSTOM CONTAINER TO HEADER FOR USER ACTIVITY BLOCKS -->
+
+        <referenceContainer name="header-wrapper">
+                <block name="header-menu" class="Snowdog\Menu\Block\Menu">
+                    <arguments>
+                        <argument name="menu" xsi:type="string">header-menu</argument>
+                    </arguments>
+                </block>
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+                <container name="user.activity" as="userActivity" label="User Activity" htmlTag="div" htmlClass="header-user-activity" after="navigation.sections" />
+        </referenceContainer>
+
+        <!-- MOVE BLOCKS TO USER ACTIVITY CONTAINER -->
+        <move element="authorization-link" destination="user.activity" before="-"/>
+        <move element="wish-list-link" destination="user.activity" after="authorization-link" />
+        <move element="top.search" destination="user.activity" after="-" />
+        <move element="minicart" destination="user.activity" before="top.search" />
+
+    </body>
+</page>

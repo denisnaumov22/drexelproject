@@ -1,0 +1,28 @@
+& when (@media-common = true) {
+    .brands-block {
+        h2 span {
+            text-transform: capitalize;
+            position: relative;
+            padding: 0 5px;
+            &::before {
+                content: "";
+                display: block;
+                width: 480px;
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                border-top: 1px solid #ebebeb;
+            }
+            &::after {
+                content: "";
+                display: block;
+                width: 480px;
+                position: absolute;
+                top: 50%;
+                right: 100%;
+                border-top: 1px solid #ebebeb;
+            }
+        }
+    }
+}
+

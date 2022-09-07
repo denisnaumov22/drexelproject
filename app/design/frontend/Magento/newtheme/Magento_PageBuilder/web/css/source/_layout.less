@@ -1,0 +1,145 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Product -- Full Width
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product-full-width-section {
+        padding: .5em 0;
+
+        .block.review-add {
+            margin-top: 2.7rem;
+        }
+    }
+    //custom
+    .page-layout-product-full-width {
+        .block.related,
+        .block.upsell {
+            margin-top: 2.7rem;
+            .block-title {//custom
+                h2 {
+                    color: @color-grey-222;
+                    font-weight: @font-weight__semibold;
+                    font-size: @font-size__large;
+                    padding: 0;
+                    position: relative;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                    letter-spacing: 1px;
+                    strong {
+                        font-size: @font-size__large;
+                        font-weight: @font-weight__semibold;
+                    }
+                }
+            }
+            ol.products { //custom
+                .lib-vendor-prefix-display(flex);
+                justify-content: space-between;
+                .product-item-info {
+                    width: auto;
+                }
+            }
+        }
+        .block.review-add {
+            width: 50%;
+            .legend.review-legend {
+                font-size: @font-size__medium;
+                font-weight: @font-weight__light;
+                text-transform: uppercase;
+                span {
+                    padding-bottom: 10px;
+                    display: block;
+                }
+                strong {
+                    font-weight: @font-weight__light;
+                }
+            }
+            .field {
+                display: flex;
+                justify-content: space-between;
+                label {
+                    width: 20%;
+                    font-size: @font-size__small;
+                    text-transform: none;
+                    font-weight: @font-weight__regular;
+                    color: @color-gray-555;
+                }
+                .control {
+                    width: 75%;
+                    input,
+                    textarea {
+                        border: 1px solid @color-gray-eee;
+                        background: @color-white;
+                        height: 35px;
+                        line-height: 35px;
+                    }
+                }
+            }
+            .action.submit.primary {
+                background: @color-gray-222;
+                border-color: @color-gray-222;
+                border-radius: 0;
+                box-shadow: none;
+                color: @color-white;
+                display: inline-block;
+                font-size: @font-size__medium;
+                font-weight: @font-weight__regular;
+                padding: 15px 30px;
+                line-height: 1.1;
+                text-shadow: none;
+                text-transform: uppercase;
+                white-space: nowrap;
+                transition: all .3s ease;
+                &:hover {
+                    background-color: @color-gray-888;
+                    border-color: @color-gray-888;
+                    color: @color-gray-fff;
+                }
+                span {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    //end custom
+
+    .page-main-details .product-section-title {
+        border-bottom: 2px solid @color-grey-222;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        width: fit-content;//custom
+        font-size: @font-size__large;
+        text-transform: uppercase;
+        font-weight: @font-weight__semibold;
+        letter-spacing: .5px;
+    }
+
+    .additional-attributes-wrapper .additional-attributes {
+        border: none;
+        width: auto;
+
+        > tbody > tr {
+            > th {
+                border: none;
+                padding: 5.5px 30px 10px 0;
+            }
+            > td {
+                border: none;
+                padding: 5.5px 5px 10px;
+            }
+        }
+    }
+}
+//
+//  Page -- Full Width
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .cms-index-index.page-layout-cms-full-width .nav-sections {
+        margin-bottom: 0;
+    }
+}

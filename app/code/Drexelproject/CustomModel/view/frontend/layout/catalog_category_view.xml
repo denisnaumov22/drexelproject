@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page>
+    <body>
+        <referenceContainer name="div.sidebar.main">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="drexelproject.viewmodel"
+                   before="-"
+                   template="Drexelproject_CustomModel::children_categories.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Drexelproject\CustomModel\ViewModel\SubcategoryViewModel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

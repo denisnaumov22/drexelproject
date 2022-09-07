@@ -1,0 +1,67 @@
+& when (@media-common = true) {
+    .newsletter-container {
+        background: @color-background-grey;
+        .block.newsletter {
+            .lib-vendor-prefix-display(flex);
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            max-width: 1280px;
+            margin: 0 auto;
+            .title {
+                strong {
+                    display: block;
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: @color-gray-222;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    line-height: normal;
+                    letter-spacing: 2px;
+                }
+                p {
+                    color: @color-gray-888;
+                    font-weight: @font-weight__light;
+                }
+            }
+            .content {
+                .form.subscribe {
+                    .lib-vendor-prefix-display(flex);
+                    column-gap: 3px;
+                    .field.newsletter {
+                        input[type="email"] {
+                            width: 270px;
+                            background: 0 0;
+                            border: 1px solid @color-gray-ddd;
+                            height: 49px;
+                            line-height: 49px;
+                            color: @color-gray-888;
+                            font-size: @font-size__medium;
+                            box-shadow: none;
+                            &::placeholder {
+                                color: @color-gray-888;
+                                font-weight: @font-weight__light;
+                            }
+                        }
+                    }
+                    .actions {
+                        button.action.primary{
+                            background: @color-gray-222;
+                            color: @color-gray-fff;
+                            border: none;
+                            margin: 0;
+                            font-size: @font-size__medium;
+                            font-weight: @font-weight__regular;
+                            padding: 17px 35px;
+                            height: 49px;
+                            border-radius: 0;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
